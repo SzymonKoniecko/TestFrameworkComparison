@@ -1,10 +1,13 @@
-﻿namespace TestFrameworkComparison
+﻿using TestFrameworkComparison.Data;
+using TestFrameworkComparison.Helpers;
+
+namespace TestFrameworkComparison
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            FileReaderHelper.ReadNumbersFromFile(DataPath.GetSortingPaths()[2]);
         }
     }
 }
