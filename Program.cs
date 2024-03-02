@@ -1,5 +1,4 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using TestFrameworkComparison.Helpers;
 using TestFrameworkComparison.Services;
 using TestFrameworkComparison.Services.Sort;
 
@@ -28,7 +27,6 @@ namespace TestFrameworkComparison
                 }
                 index++;
             }
-            PrinterHelper.PrintNumbers(args);
             if (args.Contains("--Sort"))
             {
                 var sortingService = serviceProvider.AddScoped<SortService>().BuildServiceProvider().GetService<SortService>();
