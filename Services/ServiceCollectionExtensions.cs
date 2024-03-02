@@ -5,7 +5,7 @@ namespace TestFrameworkComparison.Services
 {
     public static class ServiceCollectionExtensions
     {
-        public static IServiceCollection GetSortService(this IServiceCollection services, string arg)
+        public static IServiceCollection SetSortService(this IServiceCollection services, string arg)
         {
             switch (arg)
             {
