@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using TestFrameworkComparison.Helpers;
 using TestFrameworkComparison.Services;
 using TestFrameworkComparison.Services.Sort;
 
@@ -34,7 +35,8 @@ namespace TestFrameworkComparison
             }
             if (sortingService != null)
             {
-                sortingService.ExecuteSort(int.Parse(args[fileIndex]));
+                NUnitTestRunner.Run("TestCommand");
+                //sortingService.ExecuteSort(int.Parse(args[fileIndex]));
             }
         }
     }

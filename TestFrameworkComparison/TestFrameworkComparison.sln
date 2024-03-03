@@ -5,7 +5,7 @@ VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestFrameworkComparison", "TestFrameworkComparison.csproj", "{C77E5568-D22B-4211-A554-01A0DEB8E161}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnitProject", "..\NUnitProject\NUnitProject.csproj", "{0591E694-265A-4C0C-B53F-D6EEF0E84B35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitProject", "..\NUnitProject\NUnitProject.csproj", "{0591E694-265A-4C0C-B53F-D6EEF0E84B35}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
