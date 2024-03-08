@@ -1,5 +1,7 @@
 ﻿using BenchmarkDotNet.Attributes;
-namespace TestFrameworkComparison.Helpers
+using TestFrameworkComparison.Helpers;
+
+namespace TestFrameworkComparison.Runners
 {
     public static class NUnitTestRunner
     {

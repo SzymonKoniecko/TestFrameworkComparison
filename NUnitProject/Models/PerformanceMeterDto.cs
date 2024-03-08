@@ -1,8 +1,9 @@
-﻿using System.Diagnostics;
+﻿using Newtonsoft.Json;
+using System.Diagnostics;
 
-namespace NUnitProject
+namespace NUnitProject.Models
 {
-    public class Performance
+    public class PerformanceMeterDto
     {
         private static Stopwatch _stopwatch = new Stopwatch();
         public long StartMemory { get; private set; }
@@ -18,6 +19,9 @@ namespace NUnitProject
             _stopwatch.Stop();
             EndMemory = GC.GetTotalMemory(true);
             Elapsed = _stopwatch.Elapsed;
+            TestContext.Out.WriteLine(
+                JsonConvert.SerializeObject(this)
+                );
         }
     }
 }

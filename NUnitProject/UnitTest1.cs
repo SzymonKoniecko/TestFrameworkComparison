@@ -1,19 +1,25 @@
 using BenchmarkDotNet.Attributes;
-using System.Diagnostics;
+using NUnitProject.Models;
 namespace NUnitProject
 {
     [TestFixture]
     [MemoryDiagnoser]
     public class Tests
     {
+        private PerformanceMeterDto performanceMeterDto;
         [SetUp]
         public void Setup()
         {
-            Stopwatch sw = new Stopwatch();
+            performanceMeterDto = new PerformanceMeterDto();
+            performanceMeterDto.StartTest();
         }
-
+        [TearDown]
+        public void TearDown()
+        {
+            performanceMeterDto.EndTest();
+        }
         [Test]
-        public void Test1() => Assert.Pass();
+        public void Test1() => Assert.IsTrue(true);
         [Test]
         [Category("TestCommand")]
         public void TestCommand()

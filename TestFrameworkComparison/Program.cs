@@ -1,5 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using TestFrameworkComparison.Helpers;
+using TestFrameworkComparison.Runners;
 using TestFrameworkComparison.Services;
 using TestFrameworkComparison.Services.Sort;
 
