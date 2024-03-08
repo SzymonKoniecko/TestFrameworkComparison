@@ -1,5 +1,4 @@
-﻿using TestFrameworkComparison.Data;
-using TestFrameworkComparison.Helpers;
+﻿using TestFrameworkComparison.Helpers;
 
 namespace TestFrameworkComparison.Services.Sort
 {
@@ -17,7 +16,7 @@ namespace TestFrameworkComparison.Services.Sort
                 throw new InvalidOperationException("NO STRATEGY");
             if (fileNumber < 0 && fileNumber > 2)
                 throw new InvalidOperationException("INVALID file number");
-            _sortService.SortNumbersToCorrectOrder(FileReaderHelper.ReadNumbersFromFileToArray(DataPath.GetSortingPaths()[fileNumber]));
+            _sortService.SortNumbersToCorrectOrder(FileReaderHelper.ReadNumbersFromFileToArray(PathHelper.GetSortingPaths()[fileNumber]));
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using TestFrameworkComparison.Runners;
 using TestFrameworkComparison.Services;
 using TestFrameworkComparison.Services.Sort;
 
@@ -8,6 +9,7 @@ namespace TestFrameworkComparison
     {
         static void Main(string[] args)
         {
+            Console.Clear();
             if (args.Length == 0)
             {
                 throw new ArgumentNullException("MISSING ARGUMENTS");
@@ -34,7 +36,8 @@ namespace TestFrameworkComparison
             }
             if (sortingService != null)
             {
-                sortingService.ExecuteSort(int.Parse(args[fileIndex]));
+                NUnitTestRunner.Run("TestCommand");
+                //sortingService.ExecuteSort(int.Parse(args[fileIndex]));
             }
         }
     }

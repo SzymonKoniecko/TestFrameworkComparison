@@ -1,9 +1,9 @@
-﻿namespace TestFrameworkComparison.Data
+﻿namespace TestFrameworkComparison.Helpers
 {
-    public static class DataPath
+    public static class PathHelper
     {
         private static string BASE_PATH = GetBasePath();
-        private const string SORT_DATA = "Sort";
+        private const string SORT_DATA = "\\Data\\Sort";
         public static List<string> GetSortingPaths()
         {
             int[] lenghts = [50, 5000, 500000];
@@ -24,11 +24,15 @@
             {
                 if (i + 1 < catalogs.Length)
                 {
-                    basePath += (i == 0) ? catalogs[i] : "\\" + catalogs[i];
-                    if (catalogs[i + 1].Equals("bin")) return basePath + "\\Data";
+                    basePath += i == 0 ? catalogs[i] : "\\" + catalogs[i];
+                    if (catalogs[i + 1].Equals("bin")) return basePath;
                 }
             }
             throw new Exception("CANNOT FIND BASE PATH");
+        }
+        public static string GetNUnitProjectPath()
+        {
+            return Path.Combine(BASE_PATH + "NUnitProject");
         }
     }
 }
