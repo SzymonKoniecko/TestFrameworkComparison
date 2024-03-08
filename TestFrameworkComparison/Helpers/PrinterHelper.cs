@@ -1,4 +1,7 @@
-﻿namespace TestFrameworkComparison.Helpers
+﻿using Newtonsoft.Json;
+using TestFrameworkComparison.Models;
+
+namespace TestFrameworkComparison.Helpers
 {
     public static class PrinterHelper
     {
@@ -8,6 +11,14 @@
             {
                 Console.WriteLine(number + " ");
             }
+        }
+        public static void PrintPreformanceResult(PerformanceModel performanceModel)
+        {
+            Console.WriteLine(JsonConvert.SerializeObject(performanceModel));
+        }
+        public static void PrintSummaryOfCall()
+        {
+            throw new NotImplementedException();
         }
     }
 }

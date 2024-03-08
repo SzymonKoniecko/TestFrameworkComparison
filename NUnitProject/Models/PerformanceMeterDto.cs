@@ -20,7 +20,9 @@ namespace NUnitProject.Models
             EndMemory = GC.GetTotalMemory(true);
             Elapsed = _stopwatch.Elapsed;
             TestContext.Out.WriteLine(
-                JsonConvert.SerializeObject(this)
+                "#PERFORMANCE_DATA_START " +
+                JsonConvert.SerializeObject(this) +
+                " #PERFORMANCE_DATA_END"
                 );
         }
     }

@@ -9,6 +9,7 @@ namespace TestFrameworkComparison
     {
         static void Main(string[] args)
         {
+            Console.Clear();
             if (args.Length == 0)
             {
                 throw new ArgumentNullException("MISSING ARGUMENTS");
