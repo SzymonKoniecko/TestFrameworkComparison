@@ -1,9 +1,7 @@
-using BenchmarkDotNet.Attributes;
 using NUnitProject.Models;
 namespace NUnitProject
 {
     [TestFixture]
-    [MemoryDiagnoser]
     public class Tests
     {
         private PerformanceMeterDto performanceMeterDto;
@@ -19,8 +17,8 @@ namespace NUnitProject
             performanceMeterDto.EndTest();
         }
         [Test]
-        [Category("TestCommand")]
-        public void TestCommand()
+        [Category("TestCOMMAND")]
+        public void TestCOMMAND()
         {
         }
     }

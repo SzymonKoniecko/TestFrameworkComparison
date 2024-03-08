@@ -4,11 +4,11 @@ namespace TestFrameworkComparison.Runners
 {
     public static class NUnitTestRunner
     {
-        private static string BASE_COMMAND = "dotnet test --filter ";
-        public static void Run(string script)
+        private static string BASE_COMMAND = "dotnet test --filter NUnitProject.";
+        public static void Run(string methodIndicator)
         {
             PrinterHelper.PrintPreformanceResult(
-                PerformanceHelper.FetchPerformance(PowerShellHelper.Command(BASE_COMMAND + script), Enums.FrameworkEnum.NUnit)
+                PerformanceHelper.FetchPerformance(PowerShellHelper.Command(BASE_COMMAND + methodIndicator), Enums.FrameworkEnum.NUnit)
                 );
         }
     }

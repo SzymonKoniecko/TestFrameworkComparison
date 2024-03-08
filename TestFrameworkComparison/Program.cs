@@ -36,7 +36,8 @@ namespace TestFrameworkComparison
             }
             if (sortingService != null)
             {
-                NUnitTestRunner.Run("TestCommand");
+                NUnitTestRunner.Run("Tests.TestCOMMAND");
+                XUnitTestRunner.Run("UnitTest1.TestCOMMAND");
                 //sortingService.ExecuteSort(int.Parse(args[fileIndex]));
             }
         }

@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using NUnitProject.Enums;
 using System.Diagnostics;
 
 namespace NUnitProject.Models
@@ -9,6 +10,7 @@ namespace NUnitProject.Models
         public long StartMemory { get; private set; }
         public long EndMemory { get; private set; }
         public TimeSpan Elapsed { get; private set; }
+        public FrameworkEnum Framework { get; private set; } = FrameworkEnum.NUnit;
         public void StartTest()
         {
             _stopwatch.Start();
