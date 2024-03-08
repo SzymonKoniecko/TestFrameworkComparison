@@ -19,8 +19,6 @@ namespace NUnitProject
             performanceMeterDto.EndTest();
         }
         [Test]
-        public void Test1() => Assert.IsTrue(true);
-        [Test]
         [Category("TestCommand")]
         public void TestCommand()
         {
