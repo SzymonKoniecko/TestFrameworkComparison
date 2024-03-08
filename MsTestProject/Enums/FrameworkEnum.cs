@@ -1,4 +1,4 @@
-﻿namespace TestFrameworkComparison.Enums
+﻿namespace MsTestProject.Enums
 {
     public enum FrameworkEnum
     {

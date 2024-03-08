@@ -38,6 +38,7 @@ namespace TestFrameworkComparison
             {
                 NUnitTestRunner.Run("Tests.TestCOMMAND");
                 XUnitTestRunner.Run("UnitTest1.TestCOMMAND");
+                MsTestRunner.Run("UnitTest1.TestMethod1");
                 //sortingService.ExecuteSort(int.Parse(args[fileIndex]));
             }
         }

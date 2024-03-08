@@ -4,6 +4,6 @@
     {
         NUnit = 0,
         XUnit,
-        MSTest
+        MsTest
     }
 }
