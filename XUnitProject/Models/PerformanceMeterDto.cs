@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
-using NUnitProject.Enums;
 using System.Diagnostics;
+using XUnitProject.Enums;
 
-namespace NUnitProject.Models
+namespace XUnitProject.Models
 {
     public class PerformanceMeterDto
     {
@@ -10,22 +10,20 @@ namespace NUnitProject.Models
         public long StartMemory { get; private set; }
         public long EndMemory { get; private set; }
         public TimeSpan Elapsed { get; private set; }
-        public FrameworkEnum Framework { get; private set; } = FrameworkEnum.NUnit;
+        public FrameworkEnum Framework { get; private set; } = FrameworkEnum.XUnit;
         public void StartTest()
         {
             _stopwatch.Start();
             StartMemory = GC.GetTotalMemory(true);
         }
-        public void EndTest()
+        public string EndTest()
         {
             _stopwatch.Stop();
             EndMemory = GC.GetTotalMemory(true);
             Elapsed = _stopwatch.Elapsed;
-            TestContext.Out.WriteLine(
-                "#PERFORMANCE_DATA_START " +
+            return new string("#PERFORMANCE_DATA_START " +
                 JsonConvert.SerializeObject(this) +
-                " #PERFORMANCE_DATA_END"
-                );
+                " #PERFORMANCE_DATA_END");
         }
     }
 }
