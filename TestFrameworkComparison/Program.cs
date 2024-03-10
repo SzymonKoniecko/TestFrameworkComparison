@@ -1,4 +1,6 @@
-﻿using TestFrameworkComparison.Helpers;
+﻿using ConsoleTableExt;
+using TestFrameworkComparison.Helpers;
+using TestFrameworkComparison.Models;
 using TestFrameworkComparison.Runners;
 
 namespace TestFrameworkComparison
@@ -38,12 +40,28 @@ namespace TestFrameworkComparison
                     }
                 }
             }
+            var performanceData = new List<PerformanceModel>();
             if (isNUnit)
-                NUnitTestRunner.Run("Tests.TestCOMMAND");
+                performanceData.Add(NUnitTestRunner.Run("Tests.TestCOMMAND"));
             if (isXUnit)
-                XUnitTestRunner.Run("UnitTest1.TestCOMMAND");
+                performanceData.Add(XUnitTestRunner.Run("UnitTest1.TestCOMMAND"));
             if (isMsTest)
-                MsTestRunner.Run("UnitTest1.TestMethod1");
+                performanceData.Add(MsTestRunner.Run("UnitTest1.TestMethod1"));
+            if (performanceData.Count > 0)
+            {
+                performanceData.OrderBy(x => x.Elapsed);
+                ConsoleTableBuilder
+                    .From(performanceData)
+                    .WithTitle("Result ", ConsoleColor.Yellow, ConsoleColor.DarkGray)
+                    .WithColumn("Start Memory", "End Memory", "Diff - Memory", "Elapsed Time", "Framework")
+                    .ExportAndWriteLine(TableAligntment.Center);
+            }
+            else
+            {
+                ConsoleTableBuilder
+                    .From(performanceData)
+                    .WithTitle("No RESULTS");
+            }
         }
     }
 }

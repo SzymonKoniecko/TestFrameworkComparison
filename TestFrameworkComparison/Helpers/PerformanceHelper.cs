@@ -13,7 +13,13 @@ namespace TestFrameworkComparison.Helpers
             {
                 throw new NullReferenceException($"Missing json from fetched test logs {frameworkEnum}");
             }
-            return JsonConvert.DeserializeObject<PerformanceModel>(performanceJson);
+            var performance = JsonConvert.DeserializeObject<PerformanceModel>(performanceJson);
+            if (performance == null)
+            {
+                return null;
+            }
+            performance.DifferenceMemory = performance.EndMemory - performance.StartMemory;
+            return performance;
         }
     }
 }
