@@ -7,9 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestFrameworkComparison", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NUnitProject", "..\NUnitProject\NUnitProject.csproj", "{0591E694-265A-4C0C-B53F-D6EEF0E84B35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitProject", "..\XUnitProject\XUnitProject.csproj", "{03047C88-C0FF-4F1C-BF1A-54F8C9E9C79A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitProject", "..\XUnitProject\XUnitProject.csproj", "{03047C88-C0FF-4F1C-BF1A-54F8C9E9C79A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{C77E5568-D22B-4211-A554-01A0DEB8E161} = {C77E5568-D22B-4211-A554-01A0DEB8E161}
+	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MsTestProject", "..\MsTestProject\MsTestProject.csproj", "{A52990A7-887B-429B-A2F3-D78F07582125}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MsTestProject", "..\MsTestProject\MsTestProject.csproj", "{A52990A7-887B-429B-A2F3-D78F07582125}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

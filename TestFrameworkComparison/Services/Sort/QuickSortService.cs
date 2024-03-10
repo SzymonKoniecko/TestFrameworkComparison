@@ -1,12 +1,10 @@
-﻿using TestFrameworkComparison.Helpers;
-
-namespace TestFrameworkComparison.Services.Sort
+﻿namespace TestFrameworkComparison.Services.Sort
 {
     public class QuickSortService : ISortService
     {
-        public void SortNumbersToCorrectOrder(int[] numbersArray)
+        public int[] SortNumbersToCorrectOrder(int[] numbersArray)
         {
-            PrinterHelper.PrintNumbers(QuickSort(numbersArray, 0, numbersArray.Length - 1));
+            return QuickSort(numbersArray, 0, numbersArray.Length - 1);
         }
         private int[] QuickSort(int[] array, int leftIndex, int rightIndex)
         {
