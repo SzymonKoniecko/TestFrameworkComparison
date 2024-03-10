@@ -1,7 +1,5 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using TestFrameworkComparison.Helpers;
 using TestFrameworkComparison.Runners;
-using TestFrameworkComparison.Services;
-using TestFrameworkComparison.Services.Sort;
 
 namespace TestFrameworkComparison
 {
@@ -9,38 +7,43 @@ namespace TestFrameworkComparison
     {
         static void Main(string[] args)
         {
+            bool isNUnit = false;
+            bool isXUnit = false;
+            bool isMsTest = false;
             Console.Clear();
             if (args.Length == 0)
             {
                 throw new ArgumentNullException("MISSING ARGUMENTS");
             }
-            int index = 0;
-            var serviceProvider = new ServiceCollection();
-            int fileIndex = 0;
-            SortService sortingService = null;
             foreach (var param in args)
             {
                 if (!string.IsNullOrEmpty(param))
                 {
-                    if (param.Equals("--Sort"))
+                    switch (param.Trim().ToLower())
                     {
-                        sortingService = serviceProvider
-                            .SetSortService(args[index + 1])
-                            .AddScoped<SortService>()
-                            .BuildServiceProvider()
-                            .GetService<SortService>();
-                        fileIndex = index + 2;
+                        case ArgumentHelper.AllFrameworks:
+                            isNUnit = true;
+                            isXUnit = true;
+                            isMsTest = true;
+                            break;
+                        case ArgumentHelper.NUnit:
+                            isNUnit = true;
+                            break;
+                        case ArgumentHelper.XUnit:
+                            isXUnit = true;
+                            break;
+                        case ArgumentHelper.MsTest:
+                            isMsTest = true;
+                            break;
                     }
                 }
-                index++;
             }
-            if (sortingService != null)
-            {
+            if (isNUnit)
                 NUnitTestRunner.Run("Tests.TestCOMMAND");
+            if (isXUnit)
                 XUnitTestRunner.Run("UnitTest1.TestCOMMAND");
+            if (isMsTest)
                 MsTestRunner.Run("UnitTest1.TestMethod1");
-                //sortingService.ExecuteSort(int.Parse(args[fileIndex]));
-            }
         }
     }
 }
