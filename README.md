@@ -7,7 +7,10 @@ Arguments:
 
 Opcje:	
 
-  -all, 
+  -all  Will use all or only provided test frameworks
+  
     -xunit, 
     -nunit, 
-    -mstest              (Will use all or only provided test frameworks)
+    -mstest       
+     
+  --sort "Quick" or "Bubble" 0/1/2

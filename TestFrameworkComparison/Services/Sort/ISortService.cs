@@ -2,6 +2,6 @@
 {
     public interface ISortService
     {
-        public void SortNumbersToCorrectOrder(int[] numbersArray);
+        public int[] SortNumbersToCorrectOrder(int[] numbersArray);
     }
 }

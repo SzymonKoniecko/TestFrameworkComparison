@@ -10,13 +10,17 @@ namespace TestFrameworkComparison.Services.Sort
         {
             _sortService = sortService;
         }
-        public void ExecuteSort(int fileNumber)
+        public int[] ExecuteSort(int fileNumber)
         {
             if (_sortService == null)
                 throw new InvalidOperationException("NO STRATEGY");
             if (fileNumber < 0 && fileNumber > 2)
                 throw new InvalidOperationException("INVALID file number");
-            _sortService.SortNumbersToCorrectOrder(FileReaderHelper.ReadNumbersFromFileToArray(PathHelper.GetSortingPaths()[fileNumber]));
+            return _sortService.SortNumbersToCorrectOrder(
+                        FileReaderHelper.ReadNumbersFromFileToArray(
+                            PathHelper.GetSortingPaths()[fileNumber]
+                            )
+                        );
         }
     }
 }
