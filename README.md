@@ -5,8 +5,9 @@
 Arguments:
   <applicationArguments>  Arguments passed to the application that is being run. []
 
-Opcje:
+Opcje:	
+
   -all, 
     -xunit, 
     -nunit, 
-    -mstest,              Will use all or only provided test frameworks
+    -mstest              (Will use all or only provided test frameworks)
