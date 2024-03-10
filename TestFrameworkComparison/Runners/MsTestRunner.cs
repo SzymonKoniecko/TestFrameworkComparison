@@ -1,4 +1,5 @@
 ﻿using TestFrameworkComparison.Helpers;
+using TestFrameworkComparison.Models;
 
 namespace TestFrameworkComparison.Runners
 {
@@ -6,11 +7,9 @@ namespace TestFrameworkComparison.Runners
     {
         private static string BASE_COMMAND = "dotnet test --filter MsTestProject.";
         private static string END_PARAMS = " --logger \"console;verbosity=detailed\"";
-        public static void Run(string methodIndicator)
+        public static PerformanceModel Run(string methodIndicator)
         {
-            PrinterHelper.PrintPreformanceResult(
-                PerformanceHelper.FetchPerformance(PowerShellHelper.Command(BASE_COMMAND + methodIndicator + END_PARAMS), Enums.FrameworkEnum.XUnit)
-                );
+            return PerformanceHelper.FetchPerformance(PowerShellHelper.Command(BASE_COMMAND + methodIndicator + END_PARAMS), Enums.FrameworkEnum.XUnit);
         }
     }
 }
